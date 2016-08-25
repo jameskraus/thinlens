@@ -1,0 +1,51 @@
+{
+  "name": "thinlens",
+  "version": "1.0.0",
+  "description": "A web application for exploring the thin lens equation",
+  "scripts": {
+    "build:webpack": "webpack --config webpack.config.js",
+    "build": "npm run clean && npm run build:webpack",
+    "test": "mocha --require babel-core/register --recursive",
+    "test:watch": "npm test -- --watch",
+    "clean": "rimraf dist",
+    "start": "node devServer.js",
+    "git:clean-pages": "git branch -D gh-pages",
+    "git:create-pages": "git checkout -b gh-pages master",
+    "git:commit-changes": "git add dist && git commit -m \"gh-pages dist built\"",
+    "git:push-pages": "git push --set-upstream origin gh-pages -f",
+    "deploy-pages": "npm run git:clean-pages && npm run git:create-pages && npm run build && npm run git:commit-changes && npm run git:push-pages && git checkout master"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-plugin-transform-react-display-name": "^6.8.0",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.23.1",
+    "express": "^4.14.0",
+    "file-loader": "^0.9.0",
+    "install": "^0.8.1",
+    "node-sass": "^3.8.0",
+    "npm": "^3.10.6",
+    "path": "^0.12.7",
+    "react-hot-loader": "^3.0.0-beta.2",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.12.2"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-sass": "^3.3.7",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2"
+  }
+}

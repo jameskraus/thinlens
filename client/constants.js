@@ -1,0 +1,2 @@
+export const FOCAL_LENGTH = 'FOCAL_LENGTH'
+export const MAGNIFICATION = 'MAGNIFICATION'
