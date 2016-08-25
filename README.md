@@ -13,10 +13,6 @@ To run the local server at http://localhost:7770/
 
 Run`npm start`
 
-Testing
--------
-Run `npm run test` or `npm run test:watch`
-
 Building
 --------
 Run `npm run build`
