@@ -27,6 +27,9 @@ class SymbolValue extends React.Component {
                             value={this.props.value}
                             readOnly={this.props.isSelected}
                             onChange={this.change.bind(this)}
+                            style={{
+                                textAlign: 'right'
+                            }}
                         />
                         <div className="input-group-addon"><UnitDisplayContainer symbol={this.props.symbolName}/></div>
 
