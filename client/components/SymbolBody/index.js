@@ -7,7 +7,7 @@ import SymbolValueContainer from '../../containers/SymbolValue'
 class SymbolBody extends React.Component {
     render() {
         return (
-            <div className="row">
+            <div className="col-md-6 col-md-offset-3">
                 {this.props.symbolMap.map( (symbol, index) => (
                     <SymbolValueContainer symbol={symbol} key={index}/>
                 ))}

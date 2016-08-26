@@ -10,8 +10,12 @@ class App extends React.Component {
         return (
             <div className="container">
                     <Header/>
-                    <AppIntro />
-                    <SymbolBodyContainer/>
+                    <div className="row">
+                        <AppIntro />
+                    </div>
+                    <div className="row">
+                        <SymbolBodyContainer/>
+                    </div>
             </div>
         );
     }

@@ -17,23 +17,29 @@ class SymbolValue extends React.Component {
 
     render() {
         return (
-            <div className="col-md-4">
-                <label>{this.props.symbolText}</label>
+            <div>
+            <form className="">
+                <div className="form-group">
+                    <label>{this.props.symbolText}</label>
+                    <div className="input-group" style={{zIndex:1}}>
+                        <input
+                            className="form-control"
+                            value={this.props.value}
+                            readOnly={this.props.isSelected}
+                            onChange={this.change.bind(this)}
+                        />
+                        <div className="input-group-addon"><UnitDisplayContainer symbol={this.props.symbolName}/></div>
 
-                <div className="input-group" style={{zIndex:1}}>
-                    <input
-                        className="form-control"
-                        value={this.props.value}
-                        disabled={this.props.isSelected}
-                        onChange={this.change.bind(this)}
-                    />
-                    <span className="input-group-addon"><UnitDisplayContainer symbol={this.props.symbolName}/></span>
+                    </div>
+                    <div style={this.props.isSelected ? {display:'none'} : this.state.alertStyle} className="alert alert-danger" role="alert"><strong>Whoa!</strong> this should be a non-zero number</div>
+
+                    <SolveButtonContainer symbolName={this.props.symbolName} isSelected={this.props.isSelected} onClick={this.props.onSolveButtonClick}/>
+
                 </div>
-                <div style={this.state.alertStyle} className="alert alert-danger" role="alert"><strong>Whoa!</strong> this should be a non-zero number</div>
 
-                <SolveButtonContainer symbolName={this.props.symbolName} isSelected={this.props.isSelected} onClick={this.props.onSolveButtonClick}/>
 
-            </div>
+            </form>
+                </div>
 
         )
     }

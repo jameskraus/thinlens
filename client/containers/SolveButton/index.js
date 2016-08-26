@@ -6,7 +6,7 @@ import {setSelectedSymbol} from '../../actionCreators'
 export class SolveButton extends React.Component {
     render() {
 
-        const className = this.props.isSelected ? 'btn btn-info' : 'btn btn-primary'
+        const className = this.props.isSelected ? 'btn btn-info btn-sm' : 'btn btn-primary btn-sm'
 
         return (
             <button style={{
